@@ -15,17 +15,7 @@ deploy:
 
         - samverschueren/package-version
 
-        # Add SSH-Key to
-        - leipert/add-ssh-key-gh-bb:
-            keyname: DEPLOY_SSH
-
-        # Add github to known hosts, so they won't ask us whether we trust github
-        - add-to-known_hosts:
-            hostname: github.org
-            fingerprint: 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48
         - leipert/git-push:
-             host: github.org
-             repo: djhi/gremlins.js
-             branch: master
-             basedir: build
-             tag: PACKAGE_VERSION
+            gh_oauth: DEPLOY_SSH
+            branch: master
+            tag: PACKAGE_VERSION
