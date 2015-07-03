@@ -2,13 +2,21 @@ box: node
 
 build:
     steps:
+        - wercker/add-to-known_hosts@1.4.0:
+            hostname: github.com
+            fingerprint: 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48
+
         - script:
             name: Add upstream
             code: git remote add upstream $UPSTREAM_REPOSITORY
 
         - script:
-            name: Update from upstream
-            code: git fetch origin -v; git fetch upstream -v; git merge upstream/master
+            name: Fetch upstream
+            code: git fetch upstream -v
+
+        - script:
+            name: Merge upstream
+            code: git merge upstream/master -v
 
         # A step that executes `npm install` command
         - npm-install
