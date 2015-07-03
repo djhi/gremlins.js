@@ -16,6 +16,6 @@ deploy:
         - samverschueren/package-version
 
         - leipert/git-push:
-            gh_oauth: DEPLOY_SSH
+            gh_oauth: $DEPLOY_SSH
             branch: master
-            tag: PACKAGE_VERSION
+            tag: $PACKAGE_VERSION
