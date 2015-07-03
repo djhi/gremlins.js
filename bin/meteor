@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+var fs = require("fs"),
+    package = require("../package.json");
+
+console.log(
+  "// package metadata file for Meteor.js\n" +
+  "\n" +
+  "Package.describe({\n" +
+  "  name: 'marmelab:gremlins', // http://atmospherejs.com/marmelab/gremlins\n" +
+  "  summary: 'gremlins.js (official): " + package.description + " by marmelab',\n" +
+  "  version: '" + package.version + "',\n" +
+  "  git: 'https://github.com/marmelab/gremlins.js.git'\n" +
+  "});\n" +
+  "\n" +
+  "Package.onUse(function (api) {\n" +
+  "  api.versionsFrom(['METEOR@1.0']);\n" +
+  "  api.addFiles('gremlins.min.js', 'client');\n" +
+  "});"
+);
