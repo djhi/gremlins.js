@@ -3,7 +3,7 @@
 Package.describe({
   name: 'marmelab:gremlins', // http://atmospherejs.com/marmelab/gremlins
   summary: 'gremlins.js (official): A monkey testing library written in JavaScript, for Node.js and the browser. Use it to check the robustness of web applications by unleashing a horde of undisciplined gremlins. by marmelab',
-  version: '0.1.1',
+  version: '0.1.0',
   git: 'https://github.com/marmelab/gremlins.js.git'
 });
 
