@@ -2,6 +2,14 @@ box: node
 
 build:
     steps:
+        - script:
+            name: Add upstream
+            code: git remote add upstream %UPSTREAM_REPOSITORY
+
+        - script:
+            name: Update from upstream
+            code: git fetch origin -v; git fetch upstream -v; git merge upstream/master
+
         # A step that executes `npm install` command
         - npm-install
         # A step that executes `npm test` command
