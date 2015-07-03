@@ -4,7 +4,7 @@ build:
     steps:
         - script:
             name: Add upstream
-            code: git remote add upstream %UPSTREAM_REPOSITORY
+            code: git remote add upstream $UPSTREAM_REPOSITORY
 
         - script:
             name: Update from upstream
