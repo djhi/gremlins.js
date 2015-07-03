@@ -29,6 +29,10 @@ deploy:
             name: Build Library
             code: make build
 
+        - script:
+            name: Prepare for Meteor
+            code: make package.js
+
         - samverschueren/package-version
 
         - leipert/git-push:
